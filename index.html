@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TATA SKY LANDING PAGE</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- start navigation section here -->
+    <!-- ========================== -->
+    <nav>
+        <div class="container gridBox">
+            <div class="brand">
+                <a href="#"><h1>TATA Sky</h1></a>
+            </div>
+            <div class="menu">
+                <img src="menu.png" alt="Hamburgur" class="mobileMenu" onclick="openMenu()"/>
+                <div class="mask" id="menumask" onclick="closeMenu()"></div>
+                <ul class="list" id="menulist">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">Portfolio</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- End here navigation section -->
+    <!-- ========================== -->
+
+    <!-- start wrapper section here -->
+    <!-- ========================== -->
+    <div class="container_fluid blurback">
+        <div class="container">
+            <div class="row">
+                <div class="typography">
+                    <h2 class="commonPad">With the @font-face rule, web designers do not have</h2>
+                    <p class="commonPad">With the @font-face rule, web designers do not have to use one of the "web-safe" fonts anymore.
+                        In the @font-face and then point to the font file</p>
+                    <button class="commonBtn commonPad">Read More</button>
+                    
+                </div>
+                <div class="imagesBox">
+                    <img src="tatasky.png" alt="tatasky" />
+                </div>
+            </div>
+        </div>
+
+        <div class="container_fluid InformationBox">
+            <div class="row"> 
+                <div class="accordionBox">
+                    <button class="accordion ">Product Information</button>
+                    <div class="panel ">
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+    
+                    <button class="accordion">Product Information</button>
+                    <div class="panel">
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+    
+                    <button class="accordion">Product Information</button>
+                    <div class="panel">
+                        <div class="content">
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="videoBox">
+                    <iframe  src="https://www.youtube.com/embed/tgbNymZ7vqY?controls=0">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+        <!-- contact us -->
+        <div class="container">
+            <div class="contact">
+                <form action="">
+                    <h2>Contact Us</h2>
+                    <div class="two">
+                        <input type="text" placeholder="Name">
+                        <input type="text" placeholder="Phone">
+                    </div>
+                    <div class="one">
+                        <input type="text" placeholder="Email">
+                        <input type="text" placeholder="Address">
+                        <textarea name="" id="" placeholder="Please Leave a comment"></textarea>
+                    </div>
+                    <button class="commonBtn" type="submit">Submit</button>
+                </form>
+            </div>
+        </div>
+        <!-- footer -->
+        <div class="container">
+            <div class="footer">
+                <div class="social">
+                    <a href="#"><img src="facebook.png" alt="social"/></a>
+                    <a href="#"><img src="instagram.png" alt="social"/></a>
+                    <a href="#"><img src="twitter.png" alt="social"/></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End here wrapper section  -->
+    <!-- ========================== -->
+    <script>
+        var a = document.querySelectorAll(".list a");
+        for (var i = 0, length = a.length; i < length; i++) {
+          a[i].onclick = function() {
+            var b = document.querySelector(".list li.active");
+            if (b) b.classList.remove("active");
+            this.parentNode.classList.add('active');
+          };
+        }
+        //=========
+        let openMenu=()=>{
+            document.getElementById('menulist').classList.add('slide');
+            document.getElementById('menumask').classList.add('slide');
+            document.body.style.overflow="hidden";
+        }
+        let closeMenu=()=>{
+            document.getElementById('menulist').classList.remove('slide');
+            document.getElementById('menumask').classList.remove('slide');
+            document.body.style.overflow="scroll";
+        }
+        //==============
+
+        var acc = document.getElementsByClassName("accordion");
+        var c;
+        for (c = 0; c < acc.length; c++) {
+        acc[c].addEventListener("click", function() {
+            this.classList.toggle("active2");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+            } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+        });
+        }
+    </script>
+</body>
+</html>
